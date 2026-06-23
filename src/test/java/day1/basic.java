@@ -57,7 +57,8 @@ public class basic {
 
     @Test(priority=4,dependsOnMethods = {"createUser","updateUser"})
     void DeleteUser(){
-        given().header("x-api-key","free_user_3DTr16erSSR8LwMgwe4vJg8tCnr").when().delete("https://reqres.in/api/users/"+userid)
+        given().header("x-api-key","free_user_3DTr16erSSR8LwMgwe4vJg8tCnr")
+                .when().delete("https://reqres.in/api/users/"+userid)
                 .then().statusCode(204)
                 .body(emptyOrNullString())
                 .log().all();
